@@ -1,13 +1,9 @@
 pipeline {
     environment {
         IMAGE_NAME = "alpinehelloworld"
-        APP_EXPOSED_PORT = "80"
         IMAGE_TAG = "latest"
-        STAGING = "dajaj-staging"
-        PRODUCTION = "dajaj-prod"
-        DOCKERHUB_ID = "dajaj"
         DOCKERHUB_PASSWORD = credentials('DockerHub')
-        APP_NAME = "dajaj"
+        APP_NAME = "dajaj-static-world"
         API_ENDPOINT = "34.203.201.141:1993"
         APP_ENDPOINT = "34.203.201.141:9000"
         INTERNAL_PORT = "80"
