@@ -1,14 +1,14 @@
 pipeline {
     environment {
-        IMAGE_NAME = "alpinehelloworld"
+        IMAGE_NAME = "static-website"
         IMAGE_TAG = "latest"
         DOCKERHUB_PASSWORD = credentials('DockerHub')
-        APP_NAME = "dajaj-static-world"
+        APP_NAME = "dajaj-static-website"
         API_ENDPOINT = "34.203.201.141:1993"
         APP_ENDPOINT = "34.203.201.141:9000"
         INTERNAL_PORT = "80"
         EXTERNAL_PORT = "9000"
-        CONTAINER_IMAGE = "${DOCKERHUB_ID}/${IMAGE_NAME}:${IMAGE_TAG}"
+        CONTAINER_IMAGE = "${DOCKERHUB_PASSWORD_USR}/${IMAGE_NAME}:${IMAGE_TAG}"
     }
     agent none
     stages {
