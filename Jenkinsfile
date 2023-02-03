@@ -13,7 +13,7 @@ pipeline {
     agent none
     stages {
        stage('Build image') {
-           agent any
+           agent {label 'master'}
            steps {
               script {
                 sh 'docker build -t ${CONTAINER_IMAGE} .'
@@ -22,7 +22,7 @@ pipeline {
        }
 
       stage ('Login and Push Image on docker hub') {
-          agent any
+          agent {label 'master'}
           steps {
              script {
                sh '''
@@ -34,7 +34,7 @@ pipeline {
       }
 
       stage('Deploy app') {
-        agent any
+        agent {label 'master'}
         steps {
             script {
                 sh """
